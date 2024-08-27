@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,39 @@
     <meta name="robots" content="inde, follow">
     <title>weatherApp</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <h1>Hello world</h1>
+    <section id="container">
+        <div class="weather-container">
+
+            <div class="box-shadow">
+                <div class="weather-search">
+                    <input type="search" name="search" id="search" placeholder="Enter your city">
+                </div>
+
+                <div class="weather-location">
+                    <i class="fa-solid fa-street-view" style="color: #0b0227;"> Pokhara, Np</i>
+                    <p class="date-time">sun, 11 july 2024, 2:12:12 pm </p>
+                </div>
+            </div>
+
+            <div class="weather-logo">
+                <i class="fa-solid fa-sun"></i>
+                <p class="weather-day">Rainy</p>
+            </div>
+
+            <h3>Tempature</h3>
+            <div class="weather-temp">
+                <span class="min-temp">Min:10&deg;c</span>
+                <span class="max-temp">Max:10&deg;c</span>
+            </div>
+
+        </div>
+    </section>
 </body>
+
 </html>
