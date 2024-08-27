@@ -19,29 +19,34 @@
     <section class="container">
         <div class="location-infor">
             <div class="location">
-            <i class="fa-solid fa-street-view"></i>
-            <h2 class="location-name">Pokhara,Nepal</h2>
-        </div>
-        <p class="location-time">2024</p>
+                <i class="fa-solid fa-street-view"></i>
+                <h2 class="location-name">{{cityName}}, {{country}}</h2>
+            </div>
+            <p class="location-time">{{Date}}</p>
         </div>
 
-        <form class="search-Box">
+        <div class="search-Box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" id="search-box" placeholder="Enter City Name...">
-        </form>
+            <form accept="/" method="post">
+                <label for="search-box"></label>
+                <input type="search" name="search" id="search-box" placeholder="Enter City Name...">
+            </form>
+        </div>
 
         <div class="location-weather">
-            <h3 class="weathers">Clouds</h3>
-            <div class="weather-icons">icons</div>
+            <h3 class="weathers">{{clouds}}</h3>
+            <div class="weather-icons">
+                `<img src="http://openweathermap.org/img/wn/{{icons}}@4x.png" alt="Loading.."/>`;
+            </div>
         </div>
 
         <div class="location-temprature">
             <div class="temp">
-                <p class="min-temp">&#176 </p>
+                <p class="min-temp">{{minTemp}}&#176 </p>
                 <i class="fas fa-temperature-low"></i>
             </div>
             <div class="temp">
-                <p class="max-temp">&#176</p>
+                <p class="max-temp">{{maxTemp}}&#176</p>
                 <i class="fas fa-temperature-high"></i>
             </div>
         </div>
@@ -51,7 +56,7 @@
                 <i class="fas fa-thermometer-half"></i>
                 <div class="feel weather-feelsLike">
                     <p class="feelsLike">Feels Like</p>
-                    <p class="feels-degree"></p>
+                    <p class="feels-degree">{{feelsLike}}&#176</p>
                 </div>
             </div>
 
@@ -59,7 +64,7 @@
                 <i class="fa-solid fa-droplet"></i>
                 <div class="feel weather-humidity">
                     <p class="humidity">Humidity</p>
-                    <p class="humidity-degree"></p>
+                    <p class="humidity-degree">{{humidity}}%</p>
                 </div>
             </div>
 
@@ -67,7 +72,7 @@
                 <i class="fa-solid fa-wind"></i>
                 <div class="feel weather-wind">
                     <p class="wind">Wind</p>
-                    <p class="wind-second"></p>
+                    <p class="wind-second">{{wind}}m/s</p>
                 </div>
             </div>
 
@@ -75,7 +80,7 @@
                 <i class="fa-solid fa-gauge"></i>
                 <div class="feel weather-pressure">
                     <p class="pressure">Pressure</p>
-                    <p class="pressure-hp"></p>
+                    <p class="pressure-hp">{{pressure}}hpa</p>
                 </div>
             </div>
         </section>

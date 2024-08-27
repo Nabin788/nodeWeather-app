@@ -62,6 +62,16 @@ h1 {
 
 .fa-street-view {
     font-size: 2rem;
+    animation: move 1s linear infinite alternate;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0rem);
+    }
+    100% {
+        transform: translate(0.7rem);
+    }
 }
 
 .container .search-Box {
@@ -87,6 +97,7 @@ h1 {
 
 #search-box::placeholder {
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 .container .location-weather {
