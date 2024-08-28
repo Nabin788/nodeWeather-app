@@ -34,28 +34,11 @@ app.post("/", (req, res) => {
         let { name } = data;
         let myCity = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
 
-        if (myCity !== name) {
-            // City not found
-            return res.render("index", {
-                cityName: "city not found",
-                country: "",
-                Date: "",
-                clouds: "",
-                icons: "",
-                minTemp: "",
-                maxTemp: "",
-                feelsLike: "",
-                humidity: "",
-                pressure: "",
-                wind: "",
-            });
-        }
-
         // City found, get weather data
         apiData(data).then(requireData => {
             let { winds, dateFormated, humidity, pressure, weatherDay, weatherIcon, feelsLike, minTemp, maxTemp, country } = requireData;
 
-            res.render("index", {
+            return res.render("index", {
                 cityName: city,
                 country: country,
                 Date: dateFormated,
@@ -68,6 +51,24 @@ app.post("/", (req, res) => {
                 pressure: pressure,
                 wind: winds,
             });
+
+            if (myCity !== name) {
+                // City not found
+                return res.render("index", {
+                    cityName: "city not found",
+                    country: "",
+                    Date: "",
+                    clouds: "",
+                    icons: "",
+                    minTemp: "",
+                    maxTemp: "",
+                    feelsLike: "",
+                    humidity: "",
+                    pressure: "",
+                    wind: "",
+                });
+            }
+
         }).catch(err => {
             // Handle errors from apiData
             console.error(err);
