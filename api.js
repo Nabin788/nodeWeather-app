@@ -1,7 +1,7 @@
 let apiKey = process.env.api_key;
 
 const apiData = async (data,res) => {
-    let {dt, main, weather, sys, wind} = data;
+    let {dt, main, weather, sys, wind, name} = data;
 
     // extract date and time
     let date = new Date(dt * 1000);
@@ -34,12 +34,12 @@ const apiData = async (data,res) => {
     let countryName = new Intl.DisplayNames(['es'], {type: 'region'});
     let country = countryName.of(countryCode);
 
-    const weatherdata = {winds, dateFormated, humidity, pressure, weatherDay, weatherIcon, feelsLike, minTemp, maxTemp, country};
+    const weatherdata = {winds, dateFormated, humidity, pressure, weatherDay, weatherIcon, feelsLike, minTemp, maxTemp, country, name};
 
     return weatherdata;
 }
 
-const apiInfo = async (city) => {
+const apiInfo = async (city, defaultCity) => {
     try {
         let api = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
         let data = await api.json();
