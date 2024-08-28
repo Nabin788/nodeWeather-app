@@ -32,7 +32,7 @@ app.post("/", async (req, res) => {
         const data = await apiInfo(city); // Fetching API info based on the city name
         const requireApi = await apiData(data); // Fetching required data from the API response
 
-        let { winds, humidity, pressure, weatherDay, weatherIcon, feelsLike, minTemp, maxTemp, country, name, currTime} = requireApi; // Destructuring data for rendering
+        let { winds, humidity, pressure, weatherDay, weatherIcon, feelsLike, minTemp, maxTemp, country, name, currTime } = requireApi; // Destructuring data for rendering
 
         res.render("index", { // Rendering the index view with weather data
             cityName: `${name},`,
