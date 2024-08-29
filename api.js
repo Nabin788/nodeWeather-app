@@ -9,8 +9,6 @@ const apiData = async (data, res) => {
         year: "numeric",
         month: "long",
         day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
     };
     let currTime = new Intl.DateTimeFormat('en-US', dateOptions).format(cityDate);
 
